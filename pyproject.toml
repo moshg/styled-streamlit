@@ -1,36 +1,22 @@
 [project]
-name = "template-py"
+name = "styled-streamlit"
 version = "0.1.0"
-description = "Python template"
+description = "Streamlit app with stylings"
 license = "MIT-0"
 readme = "README.md"
 authors = [{ name = "your name", email = "your_name@example.com" }]
 requires-python = ">=3.12.0"
-dependencies = [
-    "streamlit>=1.41.1",
-    "structlog>=25.1.0",
-]
-
-[project.scripts]
-hello = "template_py:hello"
+dependencies = ["streamlit>=1.41.1", "structlog>=25.1.0"]
 
 [build-system]
 requires = ["hatchling"]
 build-backend = "hatchling.build"
 
-[tool.rye]
-managed = true
-dev-dependencies = []
-
-[tool.rye.scripts]
-# See https://rye-up.com/guide/pyproject/#toolryescripts
-start = "uvicorn template_py.main:app --reload"
-
 [tool.hatch.metadata]
 allow-direct-references = true
 
 [tool.hatch.build.targets.wheel]
-packages = ["src/template_py"]
+packages = ["src/styled_streamlit"]
 
 # Default ruff configuration: https://docs.astral.sh/ruff/configuration/
 [tool.ruff]

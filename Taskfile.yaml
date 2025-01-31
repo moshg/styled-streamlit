@@ -1,6 +1,12 @@
 version: '3'
 
 tasks:
+  start:
+    cmds:
+      - streamlit run src/styled_streamlit/main.py
+    env:
+      # ref: https://docs.streamlit.io/library/advanced-features/configuration
+      STREAMLIT_BROWSER_GATHER_USAGE_STATS: false
   check:
     deps:
       - typecheck

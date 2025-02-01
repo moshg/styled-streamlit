@@ -1,0 +1,7 @@
+#stDecoration {
+    display: none;
+}
+
+[data-testid="stHeader"] {
+    border-bottom: 1px solid #31333f33;
+}

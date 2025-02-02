@@ -14,7 +14,7 @@ with open(Path(__file__).parent / "style.css", encoding="utf-8") as f:
     css: str = f.read()
 
 # style
-st.markdown(f"<style>{css}</style>", unsafe_allow_html=True)
+st.html(f"<style>{css}</style>")
 
 pg = st.navigation(
     [

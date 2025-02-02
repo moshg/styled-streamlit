@@ -3,8 +3,8 @@
     --primary-color: #0068C9;
     --primary-color-light: #4B94DB;
     --secondary-color: #F0F2F6;
-    --border-color: #31333f33;
-    --text-color: #31333f;
+    --border-color: #888;
+
 }
 
 /* custom style */
@@ -61,8 +61,8 @@ div[role="radiogroup"]>label>div:has(+input:checked) {
 }
 
 .stMultiSelect>div>div>div>div>span[role="button"] {
-    background-color: var(--secondary-color);
-    color: inherit;
+    background-color: var(--primary-color);
+    color: #ffffff;
 }
 
 /* text input */
@@ -76,7 +76,7 @@ div[role="radiogroup"]>label>div:has(+input:checked) {
 }
 
 .stTextInput>div:has(>div>input:focus-visible) {
-    border: 2px solid var(--text-color);
+    box-shadow: 0 0 0 2px var(--border-color);
 }
 
 /* number input */
@@ -91,11 +91,19 @@ div[role="radiogroup"]>label>div:has(+input:checked) {
 }
 
 .stNumberInput>div.focused {
-    border: 2px solid var(--text-color);
+    border-color: var(--border-color);
+    box-shadow: 0 0 0 2px var(--border-color);
 }
 
 .stNumberInput>div>div {
     border: 0;
+}
+
+button[data-testid="stNumberInputStepDown"]:hover:enabled,
+button[data-testid="stNumberInputStepDown"]:focus:enabled,
+button[data-testid="stNumberInputStepUp"]:hover:enabled,
+button[data-testid="stNumberInputStepUp"]:focus:enabled {
+    background-color: var(--border-color);
 }
 
 /* expander */
@@ -119,5 +127,5 @@ button[data-testid="stTab"][aria-selected="true"]>div>p {
 }
 
 .stTabs>div>div>div>div[role="presentation"] {
-    background-color: var(--text-color);
+    background-color: var(--primary-color);
 }

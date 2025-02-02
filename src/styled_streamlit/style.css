@@ -4,6 +4,7 @@
     --primary-color-light: #4B94DB;
     --secondary-color: #F0F2F6;
     --border-color: #31333f33;
+    --text-color: #31333f;
 }
 
 /* custom style */
@@ -75,7 +76,7 @@ div[role="radiogroup"]>label>div:has(+input:checked) {
 }
 
 .stTextInput>div:has(>div>input:focus-visible) {
-    border: 2px solid #000;
+    border: 2px solid var(--text-color);
 }
 
 /* number input */
@@ -90,9 +91,33 @@ div[role="radiogroup"]>label>div:has(+input:checked) {
 }
 
 .stNumberInput>div.focused {
-    border: 2px solid #000;
+    border: 2px solid var(--text-color);
 }
 
 .stNumberInput>div>div {
     border: 0;
+}
+
+/* expander */
+.stExpander>details>summary:hover {
+    color: inherit;
+}
+
+[data-testid="stExpanderToggleIcon"] {
+    fill: unset !important;
+}
+
+/* tab */
+button[data-testid="stTab"],
+button[data-testid="stTab"]:hover,
+button[data-testid="stTab"]:focus {
+    color: inherit;
+}
+
+button[data-testid="stTab"][aria-selected="true"]>div>p {
+    font-weight: bold;
+}
+
+.stTabs>div>div>div>div[role="presentation"] {
+    background-color: var(--text-color);
 }

@@ -2,6 +2,8 @@
 :root {
     --primary-color: #0068C9;
     --primary-color-light: #4B94DB;
+    --secondary-color: #F0F2F6;
+    --border-color: #31333f33;
 }
 
 /* custom style */
@@ -10,7 +12,7 @@
 }
 
 .stApp>header {
-    border-bottom: 1px solid #31333f33;
+    border-bottom: 1px solid var(--border-color);
 }
 
 /* apply theme color */
@@ -29,17 +31,68 @@
     border-color: transparent;
 }
 
-.stButton>button:focus-visible {
-    border-color: transparent;
-    box-shadow: 0 0 0 2px var(--primary-color);
-}
-
 /* checkbox */
 .stCheckbox>label>span:has(+input:checked) {
     background-color: var(--primary-color);
     border-color: var(--primary-color);
 }
 
-.stCheckbox>label>span:focus-visible:has(+input:checked) {
-    box-shadow: 0 0 0 2px var(--primary-color) !important;
+.stCheckbox>label>span:has(+input:checked):focus-visible {
+    box-shadow: 0 0 0 2px var(--primary-color);
+}
+
+/* radio */
+div[role="radiogroup"]>label>div:has(+input:checked) {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+/* select */
+.stSelectbox>div>div {
+    background-color: inherit;
+    border-color: var(--border-color);
+}
+
+/* multi select */
+.stMultiSelect>div>div>div {
+    background-color: inherit;
+    border-color: var(--border-color);
+}
+
+.stMultiSelect>div>div>div>div>span[role="button"] {
+    background-color: var(--secondary-color);
+    color: inherit;
+}
+
+/* text input */
+.stTextInput>div,
+.stTextInput>div>div {
+    background-color: inherit;
+}
+
+.stTextInput>div {
+    border-color: var(--border-color);
+}
+
+.stTextInput>div:has(>div>input:focus-visible) {
+    border: 2px solid #000;
+}
+
+/* number input */
+.stNumberInput>div>div,
+.stNumberInput>div>div>div,
+.stNumberInput>div>div>button {
+    background-color: inherit;
+}
+
+.stNumberInput>div {
+    border-color: var(--border-color);
+}
+
+.stNumberInput>div.focused {
+    border: 2px solid #000;
+}
+
+.stNumberInput>div>div {
+    border: 0;
 }

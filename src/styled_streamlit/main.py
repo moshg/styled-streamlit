@@ -10,7 +10,7 @@ from styled_streamlit.routes.status import status_page
 from styled_streamlit.routes.text_elements import text_elements_page
 from styled_streamlit.routes.write import write_page
 
-with open(Path(__file__).parent / "style.css") as f:
+with open(Path(__file__).parent / "style.css", encoding="utf-8") as f:
     css: str = f.read()
 
 # style
